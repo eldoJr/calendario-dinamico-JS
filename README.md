@@ -1,4 +1,5 @@
 # hack-login CSS
 Animated Hack Login
-![Animated Hack Login]([ttps://github.com/eldoJr/hack_login-CSS/blob/main/preview.png?raw=true](https://github.com/eldoJr/hack_login-CSS/blob/main/preview.png))
+
+![Animated Hack Login](https://github.com/eldoJr/hack_login-CSS/blob/main/preview.png)
  
