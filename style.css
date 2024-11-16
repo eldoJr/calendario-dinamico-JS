@@ -1,105 +1,182 @@
-/*copywrite.eldodev
-  &copy; eldo.dev - Todos os direitos reservados!
-*//* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
 }
-body{
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  justify-content: center;
-  min-height: 100vh;
-  background: rgb(3, 4, 22);
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: rgb(3, 3, 37);
 }
-.wrapper{
-  width: 450px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+section 
+{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
-.wrapper header{
-  display: flex;
-  align-items: center;
-  padding: 25px 30px 10px;
-  justify-content: space-between;
+section::before 
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#000,green,yellow);
+	animation: animate 5s linear infinite;
 }
-header .icons{
-  display: flex;
+@keyframes animate 
+{
+	0%
+	{
+		transform: translateY(-100%);
+	}
+	100%
+	{
+		transform: translateY(100%);
+	}
 }
-header .icons span{
-  height: 38px;
-  width: 38px;
-  margin: 0 1px;
-  cursor: pointer;
-  color: #878787;
-  text-align: center;
-  line-height: 38px;
-  font-size: 1.9rem;
-  user-select: none;
-  border-radius: 50%;
+section span 
+{
+	position: relative;
+	display: block;
+	width: calc(6.25vw - 2px);
+	height: calc(6.25vw - 2px);
+	background:rgb(11, 5, 37);
+	z-index: 2;
+	transition: 1.5s;
 }
-.icons span:last-child{
-  margin-right: -10px;
+section span:hover 
+{
+	background: #0f0;
+	transition: 0s;
 }
-header .icons span:hover{
-  background: #f2f2f2;
+
+section .signin
+{
+	position: absolute;
+	width: 400px;
+  background: #222;  
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	border-radius: 4px;
+	box-shadow: 0 15px 35px rgba(0,0,0,9);
 }
-header .current-date{
-  font-size: 1.45rem;
-  font-weight: 500;
+section .signin .content 
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
 }
-.calendar{
-  padding: 20px;
+section .signin .content h2 
+{
+	font-size: 2em;
+	color: #0f0;
+	text-transform: uppercase;
 }
-.calendar ul{
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  text-align: center;
+section .signin .content .form 
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
 }
-.calendar .days{
-  margin-bottom: 20px;
+section .signin .content .form .inputBox
+{
+	position: relative;
+	width: 100%;
 }
-.calendar li{
-  color: #333;
-  width: calc(100% / 7);
-  font-size: 1.07rem;
+section .signin .content .form .inputBox input 
+{
+	position: relative;
+	width: 100%;
+	background: #333;
+	border: none;
+	outline: none;
+	padding: 25px 10px 7.5px;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 500;
+	font-size: 1em;
 }
-.calendar .weeks li{
-  font-weight: 500;
-  cursor: default;
+section .signin .content .form .inputBox i 
+{
+	position: absolute;
+	left: 0;
+	padding: 15px 10px;
+	font-style: normal;
+	color: #aaa;
+	transition: 0.5s;
+	pointer-events: none;
 }
-.calendar .days li{
-  z-index: 1;
-  cursor: pointer;
-  position: relative;
-  margin-top: 30px;
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+	transform: translateY(-7.5px);
+	font-size: 0.8em;
+	color: #fff;
 }
-.days li.inactive{
-  color: #aaa;
+.signin .content .form .links 
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
-.days li.active{
-  color: #fff;
+.signin .content .form .links a 
+{
+	color: #fff;
+	text-decoration: none;
 }
-.days li::before{
-  position: absolute;
-  content: "";
-  left: 50%;
-  top: 50%;
-  height: 40px;
-  width: 40px;
-  z-index: -1;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+.signin .content .form .links a:nth-child(2)
+{
+	color: #0f0;
+	font-weight: 600;
 }
-.days li.active::before{
-  background: #9B59B6;
+.signin .content .form .inputBox input[type="submit"]
+{
+	padding: 10px;
+	background: #0f0;
+	color: #000;
+	font-weight: 600;
+	font-size: 1.35em;
+	letter-spacing: 0.05em;
+	cursor: pointer;
 }
-.days li:not(.active):hover::before{
-  background: #f2f2f2;
+input[type="submit"]:active
+{
+	opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+	section span 
+	{
+		width: calc(10vw - 2px);
+		height: calc(10vw - 2px);
+	}
+}
+@media (max-width: 600px)
+{
+	section span 
+	{
+		width: calc(20vw - 2px);
+		height: calc(20vw - 2px);
+	}
 }
